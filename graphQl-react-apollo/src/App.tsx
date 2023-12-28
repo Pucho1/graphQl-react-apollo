@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { useQuery } from '@apollo/client';
 import { CONTINENTS } from './querys/countryQuerys';
-import ShowContinent from './components/ShowContinent';
+import ShowContinents from './components/ShowContinents';
 
 function App() {
   // TODO ESTO ES LO QUE HACE BASICAMENTE UN CLIENTE DE GRAPHQL PERO SI L HGO AQUI TENDRIA QUE CONFIGURAR ELSTO EN CADA COMPONENTE
@@ -30,9 +30,6 @@ function App() {
   //   })
   // })
   const {data, loading, error} = useQuery(CONTINENTS);
-  // console.log(data)
-  const toto: any= undefined
-
 
   if(error) return <p className="error"> {`${error}`}</p>
 
@@ -51,7 +48,7 @@ function App() {
         </div>
         <h1>Vite + React</h1>
       </div>
-      <ShowContinent continents={data?.continents}/>
+      <ShowContinents continents={data?.continents}/>
     </>
   )
 }
