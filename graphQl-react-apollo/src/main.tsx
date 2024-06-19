@@ -6,6 +6,7 @@ import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client';
 
 
 const client =  new ApolloClient({
+  connectToDevTools: true, // para ver las devtools de graphQL
   uri: 'https://countries.trevorblades.com/graphql', // url de donde esta el servidor de graphQl
   cache: new InMemoryCache() // es para guardar las llamadas y no tener qeu volver a repetir es obligatorio
 })

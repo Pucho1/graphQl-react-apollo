@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { CONTINENT_BY_CODE } from '../querys/getContinetByCodeQuery';
-import  ShowContinent  from './ShowContinent';
 import { useLazyQuery } from '@apollo/client';
+import ShowContinent from '../components/ShowContinent'
 
 const ShowContinents = ({continents = []} : {continents: any}) => {
 //-----> se hace todo en la misma ruta por temas de estudio
@@ -22,7 +22,8 @@ const ShowContinents = ({continents = []} : {continents: any}) => {
 
 // ---> como se dio valor en el useEfect se muestra el componente solo se vera si se ejecuta la llamda
   if(continent) {
-    return <ShowContinent data={result} setContinent={setContinent}/>
+    <ShowContinent />
+    // return <ShowCont data={result} setContinent={setContinent}/>
   };
 
   if (continents === undefined ) return null;

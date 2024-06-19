@@ -5,9 +5,11 @@ import './App.css'
 import { useQuery } from '@apollo/client';
 import { CONTINENTS } from './querys/countryQuerys';
 import ShowContinents from './components/ShowContinents';
+import PersonForm from './components/PersonForm'
 
 function App() {
   // TODO ESTO ES LO QUE HACE BASICAMENTE UN CLIENTE DE GRAPHQL PERO SI L HGO AQUI TENDRIA QUE CONFIGURAR ELSTO EN CADA COMPONENTE
+
   // const [count, setCount] = useState(0);
   // useEffect(() => {
   //   fetch('https://countries.trevorblades.com/graphql', { // ------>  se especefica la url del servidor de graphQl al que se quiere hacer la peticion
@@ -34,7 +36,7 @@ function App() {
   if(error) return <p className="error"> {`${error}`}</p>
 
   return (
-     loading ? 
+     loading ?
       <span>loading...</span>
     : <>
       <div className="title">
@@ -47,6 +49,7 @@ function App() {
           </a>
         </div>
         <h1>Vite + React</h1>
+      <PersonForm />
       </div>
       <ShowContinents continents={data?.continents}/>
     </>

@@ -1,6 +1,6 @@
 import React from 'react';
  
-const showContinent = ({data, setContinent}) => {
+function ShowContinent ({data , setContinent} : {data?: any, setContinent?: any}) {
 
   console.log('esta es los copntinentes por code', data.data)
 
@@ -12,4 +12,4 @@ const showContinent = ({data, setContinent}) => {
   )
 };
 
-export default showContinent;
+export default ShowContinent;
